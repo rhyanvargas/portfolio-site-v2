@@ -1,4 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hey 👋🏼 Welcome to My Site
+
+
+## Goals
+### User
+*...Should be able to:*
+- View and Download my `resume`
+- View `/Projects`
+    - filter by technology
+    -  View `/Project` details:
+        - Project Name
+        - Client (if needed)
+        - Overview
+        - My role 
+        - Tech stack
+        - Goals
+        - Requirements 
+        - Outcomes/Analytics (if any) 
+        - Link to live app/site
+        - Link to repo
+- Fill out `contact` that sends me an email
+- Easily navigate between pages on both desktop and mobile
+- See `/testimonials`
+- Identify `how I work` and with a team
+
+### My Goals
+- Show my best work
+- Allow user to view/download CV
+- Contact me with brief reason (email)
+- Create a fun/interactive user experience when navigating the site
+----
+## Tech Stack (JAM Stack)
+- Nextjs (SSR)
+- React (UI)
+- Sass (custom styling)
+- Sanity.io (CMS)
+
+
+## Future enhancements/Ideas
+- Emulate a song player at bottom of project page
+    - title =  project name
+    - artist = me
+    - player timeline = page progress bar 
+    - prev btn = prev project
+    - next btn = next project
+
+`* Future enhancement to add data and app functionality`
+
 
 ## Getting Started
 
