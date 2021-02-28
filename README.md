@@ -24,6 +24,10 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 - Sanity.io (CMS)
 - [Netlify](https://www.netlify.com/jamstack/)(Build System - CI/CD)
 
+## Key Concepts Used 
+
+- `prop-types` : I wanted to enhance the developer experience by importing prop-types and ensuring props take in the correct type
+
 ----
 
 ## Styling - TailwindCSS
