@@ -67,7 +67,7 @@ module.exports = {
         }],
         '2xl': ['52px', { // h1:minwidth:1600px
           letterSpacing: '0.4px',
-          lineHeight: '53px',
+          lineHeight: '60px',
         }],
       },
 			fontFamily: {
