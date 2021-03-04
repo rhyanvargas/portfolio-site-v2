@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Image from "next/image";
+import Link from "next/link";
 
 const designElementColors = {
 	quote: 'blue',
@@ -9,6 +10,10 @@ const designElementColors = {
 
 
 const styleguide = () => {
+
+
+	const href = 'www.google.com';
+
 	return (
 		<>
 			{/* HERO TEXT */}
@@ -19,9 +24,10 @@ const styleguide = () => {
 					<p className="font-bold">
 						This is a hero body - We started in a wash room and conquered the
 						world. And in-between, we have scored big and also, sometimes,
-						struggled to reach our goals. We have done our best for the best. We
+						struggled to reach our goals. <a className='link'href={href} rel="noreferrer">Click Me!</a> We have done our best for the best. We
 						have improved and grown. Looking ahead to the future, always
 						remembering where we came from. This is our story.
+				
 					</p>
 				</div>
 			</section>
@@ -30,6 +36,7 @@ const styleguide = () => {
 			<section className="container flex space-x-5">
 				<button className='btn-primary '> hire me </button>
 				<button className='btn-secondary' >hire me</button>
+				
 			</section>
 			{/* SECTION TEXT */}
 			<section className="container">
