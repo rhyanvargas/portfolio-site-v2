@@ -1,12 +1,12 @@
 import Link from "next/link";
-import styles from "../styles/Nav.module.css";
+
 import Avatar from "./Avatar";
 
-export default function Nav() {
+export default function Nav({dark}) {
 	return (
-		<nav className={styles.main}>
+		<nav className='flex justify-between dark:bg-black dark:text-white'>
 			<Avatar />
-			<ul className={styles.list} role="list">
+			<ul className='flex justify-between' role="list">
 				<li>
 					<Link href="/#work">Work</Link>
 				</li>
