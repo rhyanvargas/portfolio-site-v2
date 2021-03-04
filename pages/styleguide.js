@@ -1,9 +1,17 @@
 import PropTypes from "prop-types";
 import Image from "next/image";
 
+const designElementColors = {
+	quote: 'blue',
+	dark: 'black',
+	light: 'white',
+}
+
+
 const styleguide = () => {
 	return (
 		<>
+			{/* HERO TEXT */}
 			<section className="container">
 				<div>
 					<span className="label">subtitle</span>
@@ -17,6 +25,13 @@ const styleguide = () => {
 					</p>
 				</div>
 			</section>
+			
+			{/* BUTTONS  / links*/}
+			<section className="container flex space-x-5">
+				<button className='btn-primary '> hire me </button>
+				<button className='btn-secondary' >hire me</button>
+			</section>
+			{/* SECTION TEXT */}
 			<section className="container">
 				<h2>Heading - h2</h2>
 				<p>
@@ -26,11 +41,13 @@ const styleguide = () => {
 					ullam officiis, nesciunt voluptatibus!
 				</p>
 			</section>
+
+			{/* BLOCKQUOTE */}
 			<section className="container">
 				<blockquote className='flex flex-col content-center justify-center relative'>
 					<h2 className="">block quote</h2>
 					<div className="relative" aria-hidden="true">
-						<div className="quote">
+						<div className={`quote text-${designElementColors.quote}`}>
                             &ldquo;
                         </div>
                         <p>
@@ -56,7 +73,7 @@ const styleguide = () => {
                     </div>
 					<cite className="flex justify-center">
 						<Image
-							className="rounded-full"
+							className='rounded-full' 
 							src="https://media-exp1.licdn.com/dms/image/C5603AQHPgfi62GZuYA/profile-displayphoto-shrink_100_100/0/1517543113026?e=1620259200&v=beta&t=eY6yRGVIey9ASBnp2LO8Vv2YyGRF_Y3ToZS_gHcK1ks"
 							alt="Laura A. Black recommendation for Rhyan Vargas"
 							width="56"
@@ -66,13 +83,17 @@ const styleguide = () => {
 						<div className="flex flex-col justify-center content-start ml-3 
                         
                         ">
-							<hr className="w-8 border-2 mb-1" />
-							<span className="">Laura A. Black</span>
+							<hr className={`w-8 border-2 border-${designElementColors.quote} mb-1`} />
+							<span className="" >Laura A. Black</span>
 							<span className='text-black text-opacity-50 '>Cash Operations Team Lead</span>
 						</div>
 					</cite>
 				</blockquote>
 			</section>
+
+			
+			
+			{/* FORM */}
 		</>
 	);
 };

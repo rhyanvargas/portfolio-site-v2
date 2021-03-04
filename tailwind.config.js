@@ -75,7 +75,7 @@ module.exports = {
 				body: ["Roboto", "sans-serif"],
 			},
       fontWeight: {
-        // Heebo:wght@600;900&family=Roboto:wght@300;400;
+        // Heebo:wght@600;900&family=Roboto:wght@300;400;500;700&
         boldest: 900,
         black: 700,
         bolder: 600,
@@ -86,7 +86,39 @@ module.exports = {
       zIndex: {
         '-1': '-1',
         '-99': '-99',
-       }
+      },
+      extend: {
+        keyframes: {
+          wiggle: {
+            '0%, 100%': { transform: 'rotate(-1deg)' },
+            '50%': { transform: 'rotate(1deg)' },
+          },
+          rise: {
+            '0%, 100%': { transform: 'translateY(-5px)' },
+          }
+
+        },
+        animation: {
+          wiggle: 'wiggle 0.25s ease-in-out infinite',
+          rise: 'rise 0.5s ease-in-out infinite'
+        },
+        boxShadow: theme => ({
+          'offset-brand':  // top shadow,bottom shadow(respectively)
+            `2px -2px ${theme('colors.purple')},
+            -2px 3px ${theme('colors.green')}`, 
+          'offset-hover':  // top shadow,bottom shadow(respectively)
+            `2px -2px ${theme('colors.green')}, 
+            -3px 3px ${theme('colors.purple')}`,
+          'offset-white': `-2px 3px ${theme('colors.white')}, 3px -2px ${theme('colors.white')}`,
+          'offset-green': `-2px 3px ${theme('colors.green')} , 3px -2px ${theme('colors.green')}`,
+          'offset-purple': `-2px 3px ${theme('colors.purple')}, 3px -2px ${theme('colors.purple')}`,
+        })
+      },
 	},
+  variants: {
+    extend: {
+     animation: ['hover', 'focus'],
+    }
+  },
 	plugins: [],
-};
+}
