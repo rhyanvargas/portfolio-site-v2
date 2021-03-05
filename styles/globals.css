@@ -69,9 +69,7 @@
     button,
     input {
         @apply
-            focus:outline-none
-            focus:ring 
-            focus:ring-yellow;
+            focus:outline-none;
     }
     
 	/* ANIMATIONS */
@@ -124,8 +122,7 @@
         h-full
             absolute
             transform-gpu
-            translate-y-3/4
-            ;
+            translate-y-3/4;
         content: "";
         mix-blend-mode:multiply;
     }
@@ -133,9 +130,6 @@
         @apply translate-y-0;   
     }
 
-    nav a {
-
-    }
     
 	/* BUTTONS */
 	button {
@@ -143,12 +137,10 @@
             flex 
             items-center 
             justify-center
-            shadow-offset-brand
-            hover:shadow-offset-hover
             w-32
             h-12
             relative
-            overflow-hidden
+            overflow-hidden;
 	}
 	button:after {
         @apply  
@@ -165,7 +157,15 @@
         transform: translateX(90%);
     }
     button.btn-primary {
-        @apply bg-black text-white border-white;
+        @apply 
+        focus:ring 
+        focus:ring-yellow
+        shadow-offset-brand
+        hover:shadow-offset-hover
+        bg-black 
+        text-white
+         border-white;
+         
     }
     button.btn-primary:after { 
         @apply bg-white;
@@ -175,6 +175,8 @@
     }
     button.btn-secondary {
         @apply 
+        focus:ring 
+        focus:ring-yellow
         border-black 
         shadow-none
         bg-white border-2 
@@ -186,6 +188,13 @@
     button.btn-secondary:hover:after { 
         @apply bg-purple;
     }
+    button.no-state-styles {
+        @apply
+            focus:outline-none
+            focus:shadow-none;
+    }
+
+
 
 	/* BLOCKQUOTE */
 	blockquote p {

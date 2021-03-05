@@ -3,15 +3,11 @@ import ScrollIndicator from "./ScrollIndicator";
 import Avatar from "./Avatar";
 import { useContext } from "react";
 import { UIThemeContext } from "../pages/_app";
+import DarkModeButton from "./DarkModeButton";
+
 
 export default function Nav() {
-	const { darkModeDetails, darkModeClass, handleThemeToggle } = useContext(
-		UIThemeContext
-	);
-
-	const handleClick = () => {
-		handleThemeToggle();
-	};
+	const { darkModeDetails } = useContext(UIThemeContext);
 
 	const logoURL = darkModeDetails.isOn
 		? "/RhyGuy-whitelogo-v2.png"
@@ -23,7 +19,7 @@ export default function Nav() {
 				className="flex flex-1 items-center justify-between"
 				role="navigation"
 			>
-				<ul className="flex items center justify-between" role="list">
+				<ul className="flex flex-1 items-center justify-between" role="list">
 					<li>
 						<Link href="/#work">
 							<a>Work</a>
@@ -50,16 +46,9 @@ export default function Nav() {
 							<a>Contact</a>
 						</Link>
 					</li>
-					<li>
-						<Link href="/styleguide">
-							<a>Styleguide</a>
-						</Link>
-					</li>
+					
 				</ul>
-			
-				<button onClick={handleClick}>
-					{darkModeDetails.isOn ? "Light" : "Dark"}
-				</button>
+				<DarkModeButton />
 				<ScrollIndicator />
 			</nav>
 		</header>

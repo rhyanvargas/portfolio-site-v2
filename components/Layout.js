@@ -5,6 +5,7 @@ import {useContext} from 'react'
 import {UIThemeContext} from '../pages/_app'
 
 
+
 const Layout = ({ children}) => {
 
 const {darkModeDetails, darkModeClass}= useContext(UIThemeContext)
