@@ -1,27 +1,28 @@
 @tailwind base;
-
-/* @desc
-/* 
- */
-
 @layer base {
 	@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@600;900&family=Roboto:wght@300;400;500;700&display=swap");
 
-	/* VARIABLES */
-	:root {
-		--transition-default: all 0.28s ease-out;
-   
-	}
+    /* VARIABLES*/
+    :root {
+        --nav-height: 70px;
+    }
 
     /* GLOBAL DEFUALTS */
+    ::-moz-selection { @apply bg-yellow; }
+    ::selection { @apply bg-yellow; }
 
 	body {
 		-webkit-font-smoothing: antialiased;
-		@apply antialiased dark:text-white dark:bg-black;
+		@apply 
+            antialiased
+            dark:text-white
+            dark:bg-black;
+
 	}
     a {
         @apply
             relative
+            overflow-hidden
             inline-flex;
     }
 	h1 {
@@ -55,6 +56,15 @@
 		@apply mt-0 mb-10;
 	}
 
+    button,
+    nav a {
+		@apply 
+            uppercase 
+            text-tiny 
+            font-black 
+            tracking-widest;
+	}
+
     /* GLOBAL STATES */
     button,
     input {
@@ -64,19 +74,45 @@
             focus:ring-yellow;
     }
     
-
 	/* ANIMATIONS */
 	a,
+    a:after,
+    a:before,
 	button,
 	button:before,
 	button:after {
-        @apply transition-all duration-300;
+        @apply transition-all duration-200;
 	}
 }
 
 @tailwind components;
-
 @layer components {
+    /* CONTAINERS */
+    .page-container {
+        padding-top: var(--nav-height);
+    }
+    /* NAV */
+    header {
+        @apply 
+        flex
+        flex-1
+        bg-white
+        dark:bg-black
+        dark:text-white
+        fixed
+        top-0
+        left-0
+        z-50
+        w-full;
+        height: var(--nav-height);
+
+    }
+    nav {
+        @apply 
+            flex
+            justify-between;
+    }
+
     /* LINKS */
     a.link:after {
         @apply  
@@ -85,34 +121,34 @@
             left-0
             bottom-0
             w-full
-            h-1
+        h-full
             absolute
             transform-gpu
+            translate-y-3/4
             ;
         content: "";
         mix-blend-mode:multiply;
     }
     a.link:hover:after {
-        @apply h-full;   
+        @apply translate-y-0;   
+    }
+
+    nav a {
+
     }
     
 	/* BUTTONS */
 	button {
-		@apply flex 
+		@apply 
+            flex 
             items-center 
             justify-center
             shadow-offset-brand
             hover:shadow-offset-hover
             w-32
             h-12
-            uppercase 
-            text-tiny 
-            font-black 
             relative
             overflow-hidden
-            tracking-widest
-        
-
 	}
 	button:after {
         @apply  
@@ -163,7 +199,6 @@
 		font-size: 12rem;
 		@apply mr-2 font-body absolute -top-5 -left-10 -z-1 leading-none;
 	}
-
 	cite {
 		@apply mt-7;
 	}
@@ -174,6 +209,7 @@
             uppercase;
 	}
 
+    /* SMALLER COMPONENTS */
 	.label {
 		@apply font-body
             font-light
@@ -184,6 +220,14 @@
             dark:text-gray
             ;
 	}
+
+    /* SCROLL INDICATOR */
+    .scrollContainer {
+        @apply absolute bottom-0 w-full bg-gray;
+    }
+    .scrollFill {
+        @apply bg-blue h-2 w-3;
+    }
 }
 
 @tailwind utilities;

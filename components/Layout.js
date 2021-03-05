@@ -1,24 +1,22 @@
 import styles from "../styles/Layout.module.css";
 import Nav from "./Nav";
+import BottomNav from "./BottomNav";
+import {useContext} from 'react'
+import {UIThemeContext} from '../pages/_app'
 
-const Layout = ({ children,darkMode,handleThemeToggle}) => {
 
-	const dark = darkMode ? 'dark' : '';
+const Layout = ({ children}) => {
 
-	const handleClick = () => {
-		console.log(dark);
-		handleThemeToggle();
-	}
+const {darkModeDetails, darkModeClass}= useContext(UIThemeContext)
+
 	return (
-		<>
-			<Nav className={``}/>
+		<div className={`page-container ${darkModeClass}`}>
+			<Nav />
 			<div className={`container`}>
-				<button onClick={handleClick}>
-					{darkMode ? 'Light' : 'Dark'}
-				</button>
 				<main className={styles.main}>{children}</main>
 			</div>
-		</>
+			<BottomNav />
+		</div>
 	);
 };
 

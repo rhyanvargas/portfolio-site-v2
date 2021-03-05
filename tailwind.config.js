@@ -83,11 +83,11 @@ module.exports = {
         normal: 400,
         light: 300
       },
-      zIndex: {
-        '-1': '-1',
-        '-99': '-99',
-      },
       extend: {
+        zIndex: {
+          '-1': '-1',
+          '-99': '-99',
+        },
         keyframes: {
           wiggle: {
             '0%, 100%': { transform: 'rotate(-1deg)' },
@@ -121,4 +121,5 @@ module.exports = {
     }
   },
 	plugins: [],
+  
 }

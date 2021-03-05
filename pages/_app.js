@@ -1,21 +1,30 @@
 import "../styles/globals.css"
 import Layout from '../components/Layout'
-import { useState } from "react";
+import { useState, createContext } from "react";
+
+export const UIThemeContext = createContext(null);
 
 function MyApp({ Component, pageProps }) {
-  const [darkMode, setDarkMode] = useState(false)
-  const darkModeClass = darkMode ? 'dark' : ''
+
+  
+  const [darkModeDetails, setDarkModeDetails] = useState({isOn: false, darkClass: ''})
+  const darkModeClass = darkModeDetails.isOn ? 'dark' : ''
   
 const handleThemeToggle = () => {
-  setDarkMode(darkMode => !darkMode);
+  setDarkModeDetails(details =>  
+  (
+    {
+      isOn: !details.isOn
+    }
+  ))
 }
 
   return (
-  <div className={`${darkModeClass}`}>
-   <Layout darkMode={darkMode} handleThemeToggle={handleThemeToggle}>
-     <Component {...pageProps} />
-   </Layout> 
-  </div>
+  <UIThemeContext.Provider value={{darkModeDetails,darkModeClass,handleThemeToggle}} >
+    <Layout>
+      <Component {...pageProps} />
+    </Layout> 
+  </UIThemeContext.Provider>
   )
 }
 
