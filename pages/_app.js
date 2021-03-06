@@ -20,11 +20,13 @@ const handleThemeToggle = () => {
 }
 
   return (
-  <UIThemeContext.Provider value={{darkModeDetails,darkModeClass,handleThemeToggle}} >
-    <Layout>
-      <Component {...pageProps} />
-    </Layout> 
-  </UIThemeContext.Provider>
+    <>
+      <UIThemeContext.Provider value={{darkModeDetails,darkModeClass,handleThemeToggle}} >
+        <Layout>
+          <Component {...pageProps} />
+        </Layout> 
+      </UIThemeContext.Provider>
+    </>
   )
 }
 

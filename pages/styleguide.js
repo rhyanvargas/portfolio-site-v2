@@ -18,18 +18,16 @@ const styleguide = () => {
 		<>
 			{/* HERO TEXT */}
 			<section className="container">
-				<div>
-					<span className="label">subtitle</span>
-					<h1>section/hero title</h1>
-					<p className="font-bold">
-						This is a hero body - We started in a wash room and conquered the
-						world. And in-between, we have scored big and also, sometimes,
-						struggled to reach our goals. <a className='link'href={href} rel="noreferrer">Click Me!</a> We have done our best for the best. We
-						have improved and grown. Looking ahead to the future, always
-						remembering where we came from. This is our story.
-				
-					</p>
-				</div>
+				<span className="label">subtitle</span>
+				<h1>section/hero title</h1>
+				<p className="font-bold">
+					This is a hero body - We started in a wash room and conquered the
+					world. And in-between, we have scored big and also, sometimes,
+					struggled to reach our goals. <a className='link'href={href} rel="noreferrer">Click Me!</a> We have done our best for the best. We
+					have improved and grown. Looking ahead to the future, always
+					remembering where we came from. This is our story.
+			
+				</p>
 			</section>
 			
 			{/* BUTTONS  / links*/}
@@ -92,7 +90,7 @@ const styleguide = () => {
                         ">
 							<hr className={`w-8 border-2 border-${designElementColors.quote} mb-1`} />
 							<span className="" >Laura A. Black</span>
-							<span className='text-black text-opacity-50 '>Cash Operations Team Lead</span>
+							<span className='text-black text-tiny text-opacity-50 dark:text-gray'>Cash Operations Team Lead</span>
 						</div>
 					</cite>
 				</blockquote>

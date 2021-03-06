@@ -85,13 +85,14 @@ module.exports = {
       },
       extend: {
         zIndex: {
+          '0': '0',
           '-1': '-1',
           '-99': '-99',
         },
         keyframes: {
           wiggle: {
-            '0%, 100%': { transform: 'rotate(-1deg)' },
-            '50%': { transform: 'rotate(1deg)' },
+            '0%, 100%': { transform: 'rotate(-1.5deg)' },
+            '50%': { transform: 'rotate(1.5deg)' },
           },
           rise: {
             '0%, 100%': { transform: 'translateY(-5px)' },

@@ -5,18 +5,19 @@ import {useContext} from 'react'
 import {UIThemeContext} from '../pages/_app'
 
 
-
 const Layout = ({ children}) => {
 
 const {darkModeDetails, darkModeClass}= useContext(UIThemeContext)
 
 	return (
-		<div className={`page-container ${darkModeClass}`}>
-			<Nav />
-			<div className={`container`}>
-				<main className={styles.main}>{children}</main>
+		<div className={`page-container ${darkModeClass}`} >
+			<div className={`page-wrapper`}>
+				<Nav />
+				<div className={`container`}>
+					<main className={styles.main}>{children}</main>
+				</div>
+				<BottomNav />
 			</div>
-			<BottomNav />
 		</div>
 	);
 };

@@ -12,7 +12,7 @@ const DarkModeButton = () => {
 	};
     
 	const sun = (
-		<svg width="32" height="32" fill="none">
+		<svg className="" width="32" height="32" fill="none">
 			<path
 				fillRule="evenodd"
 				clipRule="evenodd"
@@ -78,7 +78,7 @@ const DarkModeButton = () => {
 	);
 
 	return (
-        <div className=" flex-grow-0">
+        <div className=" hover:animate-wiggle flex-grow-0">
             <button className="animate-pulse h-full w-20 " onClick={handleClick}>
                 {darkModeDetails.isOn ? sun : moon}
             </button>

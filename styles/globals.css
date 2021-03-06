@@ -2,29 +2,32 @@
 @layer base {
 	@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@600;900&family=Roboto:wght@300;400;500;700&display=swap");
 
-    /* VARIABLES*/
-    :root {
-        --nav-height: 70px;
-    }
-
-    /* GLOBAL DEFUALTS */
-    ::-moz-selection { @apply bg-yellow; }
-    ::selection { @apply bg-yellow; }
-
-	body {
-		-webkit-font-smoothing: antialiased;
-		@apply 
-            antialiased
-            dark:text-white
-            dark:bg-black;
-
+	/* VARIABLES*/
+	:root {
+		--nav-height: 70px;
 	}
-    a {
-        @apply
-            relative
+
+	/* GLOBAL DEFUALTS */
+	::-moz-selection {
+		@apply bg-yellow;
+	}
+	::selection {
+		@apply bg-yellow;
+	}
+
+	html,body,div#__next,.page-container {height:100%; width:100%} 
+	body>div:first-of-type {
+		height:100%;
+	}
+	body {
+		-webkit-font-smoothing: auto;
+		font-smoothing: auto;
+	}
+	a {
+		@apply relative
             overflow-hidden
             inline-flex;
-    }
+	}
 	h1 {
 		@apply font-boldest
             font-heading
@@ -40,6 +43,7 @@
             laptop:text-2md
             uppercase;
 	}
+
 	p {
 		@apply font-normal
             font-body
@@ -49,6 +53,12 @@
 	p:first-of-type {
 		@apply mt-5;
 	}
+	h1,
+	h2,
+	p,
+    a {
+		@apply dark:text-white;
+	}
 	section {
 		@apply mt-10 mb-10;
 	}
@@ -56,43 +66,42 @@
 		@apply mt-0 mb-10;
 	}
 
-    button,
-    nav a {
-		@apply 
-            uppercase 
+	button,
+	nav a {
+		@apply uppercase 
             text-tiny 
             font-black 
             tracking-widest;
 	}
 
-    /* GLOBAL STATES */
-    button,
-    input {
-        @apply
-            focus:outline-none;
-    }
-    
+	/* GLOBAL STATES */
+	button,
+	input {
+		@apply focus:outline-none;
+	}
+
 	/* ANIMATIONS */
 	a,
-    a:after,
-    a:before,
+	a:after,
+	a:before,
 	button,
 	button:before,
 	button:after {
-        @apply transition-all duration-200;
+		@apply transition-all duration-200;
 	}
 }
 
 @tailwind components;
 @layer components {
-    /* CONTAINERS */
-    .page-container {
-        padding-top: var(--nav-height);
-    }
-    /* NAV */
-    header {
-        @apply 
-        flex
+	/* CONTAINERS / WRAPPERS */
+	.page-wrapper {
+		padding-top: var(--nav-height);
+		min-height:100%;
+		@apply dark:bg-black;
+	}
+	/* NAV */
+	header {
+		@apply flex
         flex-1
         bg-white
         dark:bg-black
@@ -102,39 +111,51 @@
         left-0
         z-50
         w-full;
-        height: var(--nav-height);
-
-    }
-    nav {
-        @apply 
-            flex
+		height: var(--nav-height);
+	}
+	nav {
+		@apply flex
             justify-between;
-    }
+	}
+	header li:after {
+		content: "";
+		@apply pointer-events-none
+            bottom-0
+            left-0
+            absolute
+            -z-1;
+	}
+	header li:hover:after {
+		@apply w-full
+            h-full
+            bg-green;
+	}
+	header a:hover {
+		@apply dark:text-black;
+	}
 
-    /* LINKS */
-    a.link:after {
-        @apply  
+	/* LINKS */
+  
+	a.link:after {
+		@apply pointer-events-none
             bg-green
             bg-opacity-70
             left-0
             bottom-0
             w-full
-        h-full
+            h-full
             absolute
             transform-gpu
             translate-y-3/4;
-        content: "";
-        mix-blend-mode:multiply;
-    }
-    a.link:hover:after {
-        @apply translate-y-0;   
-    }
-
-    
+           
+		content: "";
+	}
+	a.link:hover:after {
+		@apply translate-y-0;
+	}
 	/* BUTTONS */
 	button {
-		@apply 
-            flex 
+		@apply flex 
             items-center 
             justify-center
             w-32
@@ -143,58 +164,50 @@
             overflow-hidden;
 	}
 	button:after {
-        @apply  
+		@apply pointer-events-none
             left-0
             w-full
             absolute
             transform-gpu;
-        content: "";
+		content: "";
 		height: 1px;
 		transform: translateX(-90%);
-       
 	}
-    button:hover:after {
-        transform: translateX(90%);
-    }
-    button.btn-primary {
-        @apply 
-        focus:ring 
+	button:hover:after {
+		transform: translateX(90%);
+	}
+	button.btn-primary {
+		@apply focus:ring 
         focus:ring-yellow
         shadow-offset-brand
         hover:shadow-offset-hover
         bg-black 
         text-white
          border-white;
-         
-    }
-    button.btn-primary:after { 
-        @apply bg-white;
-    }
-    button.btn-primary:hover:after { 
-        @apply bg-green;
-    }
-    button.btn-secondary {
-        @apply 
-        focus:ring 
+	}
+	button.btn-primary:after {
+		@apply bg-white;
+	}
+	button.btn-primary:hover:after {
+		@apply bg-green;
+	}
+	button.btn-secondary {
+		@apply focus:ring 
         focus:ring-yellow
-        border-black 
         shadow-none
-        bg-white border-2 
+        bg-white 
         hover:shadow-offset-brand;
-    }
-    button.btn-secondary:after { 
-        @apply bg-black ;
-    }
-    button.btn-secondary:hover:after { 
-        @apply bg-purple;
-    }
-    button.no-state-styles {
-        @apply
-            focus:outline-none
+	}
+	button.btn-secondary:after {
+		@apply bg-black;
+	}
+	button.btn-secondary:hover:after {
+		@apply bg-purple;
+	}
+	button.no-state-styles {
+		@apply focus:outline-none
             focus:shadow-none;
-    }
-
-
+	}
 
 	/* BLOCKQUOTE */
 	blockquote p {
@@ -215,10 +228,11 @@
 		@apply not-italic
             text-labelLarge
             font-black
-            uppercase;
+            uppercase
+            dark:text-white;
 	}
 
-    /* SMALLER COMPONENTS */
+	/* SMALLER COMPONENTS */
 	.label {
 		@apply font-body
             font-light
@@ -226,17 +240,16 @@
             laptop:text-labelLarge2 
             desktop:text-labelLarge3 
             uppercase
-            dark:text-gray
-            ;
+            dark:text-gray;
 	}
 
-    /* SCROLL INDICATOR */
-    .scrollContainer {
-        @apply absolute bottom-0 w-full bg-gray;
-    }
-    .scrollFill {
-        @apply bg-blue h-2 w-3;
-    }
+	/* SCROLL INDICATOR */
+	.scrollContainer {
+		@apply absolute bottom-0 w-full bg-gray;
+	}
+	.scrollFill {
+		@apply bg-blue h-2 w-3;
+	}
 }
 
 @tailwind utilities;

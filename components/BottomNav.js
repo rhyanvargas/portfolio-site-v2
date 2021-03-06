@@ -25,7 +25,7 @@ const BottomNav = () => {
                     </li>
                 </ul>
                 <div>
-                    <span className="font-light text-tiny2">Built with &nbsp;☕️&nbsp;&nbsp;&amp;&nbsp;❤️&nbsp;&nbsp;by RhyGuy Digital ©2021</span>
+                    <span className="font-light text-tiny2 dark:text-gray">Built with &nbsp;☕️&nbsp;&nbsp;&amp;&nbsp;❤️&nbsp;&nbsp;by RhyGuy Digital ©2021</span>
                 </div>
             </nav>
         </footer>
