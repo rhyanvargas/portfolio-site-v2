@@ -2,7 +2,7 @@ import React from 'react'
 import Link from "next/link";
 import Avatar from "./Avatar";
 
-const BottomNav = () => {
+const Footer = () => {
   
     return (
         <footer className="">
@@ -32,4 +32,4 @@ const BottomNav = () => {
     );    
 }
 
-export default BottomNav
+export default Footer

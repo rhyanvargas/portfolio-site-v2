@@ -28,7 +28,7 @@ export default function Nav() {
 		{
 			key: 1,
 			name: "work",
-			url: "/#work",
+			url: "#work",
 			locations: ["header"],
 		},
 		{
@@ -76,15 +76,21 @@ export default function Nav() {
 					</Link>
 				</div>
 				<ul className="flex flex-1 " role="list">
-					{navItems.filter(item => !item.locations.includes('footer'))
+					{navItems
+						.filter((item) => !item.locations.includes("footer"))
 						.map((item) => (
-							<li key={item.key} className={`${listItemStyles.concat(" ",listItemBorderStyles)} relative`}>
+							<li
+								key={item.key}
+								className={`${listItemStyles.concat(
+									" ",
+									listItemBorderStyles
+								)} relative`}
+							>
 								<Link href={item.url}>
 									<a className={aStyles}>{item.name}</a>
 								</Link>
 							</li>
-						)
-					)}
+						))}
 				</ul>
 				<DarkModeButton />
 				{/* <ScrollIndicator /> */}

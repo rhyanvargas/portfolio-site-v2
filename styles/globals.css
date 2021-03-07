@@ -23,6 +23,9 @@
 		-webkit-font-smoothing: auto;
 		font-smoothing: auto;
 	}
+	section.full-width {
+		@apply	pl-0 pr-0;
+	}
 	a {
 		@apply relative
             overflow-hidden
