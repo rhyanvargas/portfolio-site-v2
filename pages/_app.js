@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
         description="More than just a Front End Developer. My experience extends to Project Management, UX/UI design, and Marketing Automation. I am currently using React, Javascript, REST/GraphQL APIs and SQL"
       />
       <UIThemeContext.Provider value={{ darkModeDetails, darkModeClass, handleThemeToggle }} >
-        <Layout>
+        <Layout className='${darkModeClass}'>
           <Component {...pageProps} />
         </Layout>
       </UIThemeContext.Provider>

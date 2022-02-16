@@ -12,14 +12,16 @@
 	}
 
 	/* GLOBAL DEFUALTS */
-	::-moz-selection {
+
+	/* Custom Highlighting */
+	::-moz-selection { 
 		@apply bg-yellow;
 	}
 	::selection {
 		@apply bg-yellow;
 	}
 
-	html,body,div#__next,.page-container {height:100%; width:100%} 
+	html,body,div#__next,{height:100%; width:100%} 
 	body>div:first-of-type {
 		height:100%;
 	}
@@ -111,7 +113,7 @@
   }
 	.page-wrapper {
 		padding-top: var(--nav-height);
-		min-height:100%;
+		height:100%;
 		@apply dark:bg-black;
 	}
 	/* NAV */
@@ -203,11 +205,13 @@
 	button.btn-primary {
 		@apply focus:ring 
         focus:ring-yellow
-        shadow-offset-brand
-        hover:shadow-offset-hover
+				shadow-none
+        /* shadow-offset-brand */
         bg-black 
         text-white
-         border-white;
+				border
+				border-white
+				hover:shadow-offset-brand;
 	}
 	button.btn-primary:after {
 		@apply bg-white;
@@ -220,6 +224,8 @@
         focus:ring-yellow
         shadow-none
         bg-white 
+				border
+				border-black
         hover:shadow-offset-brand;
 	}
 	button.btn-secondary:after {
@@ -228,18 +234,17 @@
 	button.btn-secondary:hover:after {
 		@apply bg-purple;
 	}
-	button.no-state-styles {
+	/* button.no-state-styles {
 		@apply focus:outline-none
             focus:shadow-none;
-	}
+	} */
 
 	/* BLOCKQUOTE */
 	blockquote p {
-		@apply font-black
+		@apply font-bold
             tracking-widest
             leading-7
-            tablet:leading-8
-            uppercase;
+            tablet:leading-8;
 	}
 	blockquote .quote {
 		font-size: 12rem;
