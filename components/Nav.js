@@ -5,12 +5,35 @@ import { useContext } from "react";
 import { UIThemeContext } from "../pages/_app";
 import DarkModeButton from "./DarkModeButton";
 
-export default function Nav() {
+
+export default function Nav({ logoURL, navItems }) {
 	const { darkModeDetails } = useContext(UIThemeContext);
 
-	const logoURL = darkModeDetails.isOn
-		? "/RhyGuy-whitelogo-v2.png"
-		: "/RhyGuy-blacklogo-v2.png";
+
+	const logo = () => {
+		console.log(logoURL(darkModeDetails.isOn));
+	}
+
+	const navList = (navItems) => {
+		let mainNav = navItems.filter(item => {
+			return !item.locations.includes('footer')
+		});
+
+		let nav = mainNav.map(item => (
+			<li
+				key={`${item.toString()} + ${item.key.toString()}`}
+				className={`${listItemStyles.concat(
+					" ",
+					listItemBorderStyles
+				)} relative`}
+			>
+				<Link href={item.url}>
+					<a className={aStyles}>{item.name}</a>
+				</Link>
+			</li>
+		))
+		return nav;
+	}
 
 	const listItemStyles = "flex flex-1 justify-center items-center";
 	const listItemBorderStyles =
@@ -24,38 +47,6 @@ export default function Nav() {
 		flex-1 
 		flex
 	`;
-	const navItems = [
-		{
-			key: 1,
-			name: "work",
-			url: "#work",
-			locations: ["header"],
-		},
-		{
-			key: 2,
-			name: "reviews",
-			url: "/testimonials",
-			locations: ["header"],
-		},
-		{
-			key: 4,
-			name: "blog",
-			url: "/blog",
-			locations: ["header"],
-		},
-		{
-			key: 5,
-			name: "contact",
-			url: "/#contact",
-			locations: ["header"],
-		},
-		{
-			key: 6,
-			name: "styleguide",
-			url: "/#styleguide",
-			locations: ["header", "footer"],
-		},
-	];
 
 	return (
 		<header className="navbar">
@@ -71,26 +62,12 @@ export default function Nav() {
 				>
 					<Link href="/">
 						<a className="items-center relative h-full w-28 tablet:w-40 laptop:w-44">
-							<Avatar imgURL={logoURL} />
+							<Avatar imgURL='/RhyGuy-blacklogo-v2.png' />
 						</a>
 					</Link>
 				</div>
 				<ul className="flex flex-1 " role="list">
-					{navItems
-						.filter((item) => !item.locations.includes("footer"))
-						.map((item) => (
-							<li
-								key={item.key}
-								className={`${listItemStyles.concat(
-									" ",
-									listItemBorderStyles
-								)} relative`}
-							>
-								<Link href={item.url}>
-									<a className={aStyles}>{item.name}</a>
-								</Link>
-							</li>
-						))}
+					{navList(navItems)}
 				</ul>
 				<DarkModeButton />
 				{/* <ScrollIndicator /> */}

@@ -3,16 +3,18 @@ import Link from "next/link";
 import Avatar from "./Avatar";
 
 const Footer = () => {
-  
+
     return (
-        <footer className="">
+        <footer >
             <nav className="flex flex-1 flex-col items-center justify-between" role="navigation">
                 <ul className="flex items flex-1 center justify-between" role="list">
                     <li>
                         <Link href="/#work"><a>Work</a></Link>
                     </li>
                     <li>
-                        <Link href="/#testimonials"><a>Testimonials</a></Link>
+                        <Link href="/#Reviews
+"><a>Reviews
+                            </a></Link>
                     </li>
                     <li>
                         <Link href="/blog"><a>Blog</a></Link>
@@ -29,7 +31,7 @@ const Footer = () => {
                 </div>
             </nav>
         </footer>
-    );    
+    );
 }
 
 export default Footer

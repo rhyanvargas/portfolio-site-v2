@@ -4,7 +4,7 @@
 @tailwind screens;
 
 @layer base {
-	@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@600;900&family=Roboto:wght@300;400;500;700&display=swap");
+	/* @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@600;900&family=Roboto:wght@300;400;500;700&display=swap"); */
 
 	/* VARIABLES*/
 	:root {
@@ -38,8 +38,9 @@
             inline-flex;
 	}
 	h1 {
+		word-spacing: 7px;
 		@apply font-boldest
-            font-heading
+            font-sans
             text-lg
             tablet:text-xl
             desktop:text-2xl 
@@ -47,14 +48,14 @@
 	}
 	h2 {
 		@apply font-bold
-            font-heading
+            font-sans
             text-md
             laptop:text-2md;
 	}
 
 	p {
 		@apply font-light
-            font-body
+            font-mono
             laptop:text-body2 
             desktop:text-body3;
 	}
@@ -206,7 +207,6 @@
 		@apply focus:ring 
         focus:ring-yellow
 				shadow-none
-        /* shadow-offset-brand */
         bg-black 
         text-white
 				border
@@ -248,7 +248,13 @@
 	}
 	blockquote .quote {
 		font-size: 12rem;
-		@apply mr-2 font-body absolute -top-5 -left-10 -z-1 leading-none;
+		@apply mr-2
+					 font-mono
+					 absolute
+					 -top-5
+					 -left-10
+					 z-0
+					 leading-none;
 	}
 	cite {
 		@apply mt-7;
@@ -263,7 +269,7 @@
 
 	/* SMALLER COMPONENTS */
 	.label {
-		@apply font-body
+		@apply font-mono
             font-light
             text-labelLarge 
             laptop:text-labelLarge2 

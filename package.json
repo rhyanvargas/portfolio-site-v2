@@ -1,20 +1,21 @@
 {
-  "name": "rhyan-portfolio-site",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "next": "10.0.7",
-    "next-seo": "^4.20.0",
-    "react": "17.0.1"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.2.4",
-    "postcss": "^8.2.6",
-    "tailwindcss": "^2.0.3"
-  }
+	"name": "rhyan-portfolio-site",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start"
+	},
+	"dependencies": {
+		"next": "^12.0.10",
+		"next-seo": "^4.20.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.2",
+		"postcss": "^8.4.6",
+		"tailwindcss": "^3.0.23"
+	}
 }

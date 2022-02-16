@@ -58,7 +58,8 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
         - Link to repo
 - Fill out `contact` that sends me an email
 - Easily navigate between pages on both desktop and mobile
-- See `/testimonials`
+- See `/Reviews
+`
 - Identify `how I work` and with a team
 
 ### My Goals

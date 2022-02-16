@@ -18,8 +18,10 @@ function MyApp({ Component, pageProps }) {
       }
     ))
   }
+  // Use the layout defined at the page level, if available
+  const getLayout = Component.getLayout || ((page) => page)
 
-  return (
+  return getLayout(
     <>
       <DefaultSeo
         description="More than just a Front End Developer. My experience extends to Project Management, UX/UI design, and Marketing Automation. I am currently using React, Javascript, REST/GraphQL APIs and SQL"

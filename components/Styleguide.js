@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import Image from "next/image";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
@@ -23,7 +23,7 @@ const tools = [
 const showTools = (
 	<div className="space-x-2">
 		{tools.map(tool => (
-			<a className="link" href={tool.url}>
+			<a key={tool.toString()} className="link" href={tool.url}>
 				{tool.name}
 			</a>
 		))}
@@ -36,10 +36,10 @@ const Styleguide = () => {
 		<>
 			<NextSeo title="Style Guide | Rhyan Vargas - Full Stack Web Developer" />
 			{/* HERO TEXT */}
-			<section className="container flex-wrap sm:flex-no-wrap">
+			<section className="container flex flex-wrap sm:flex-no-wrap">
 				<div className="">
 					<span className="label">My name is Rhyan Vargas... </span>
-					<h1>more than just a devloper.</h1>
+					<h1>more than a devloper.</h1>
 					<p className="">
 						I care about the user experience of both the end-users and the
 						people managing the product. The tools I use to create amazing
@@ -66,6 +66,7 @@ const Styleguide = () => {
 				<button className="btn-primary "> hire me </button>
 				<button className="btn-secondary">hire me</button>
 			</section>
+
 			{/* SECTION TEXT */}
 			<section className="container">
 				<h2>Heading - h2</h2>
@@ -82,9 +83,11 @@ const Styleguide = () => {
 				<blockquote className="flex flex-col content-center justify-center relative">
 					<h2 className="">block quote</h2>
 					<div className="relative" aria-hidden="true">
-						<div className={`quote text-${designElementColors.quote}`}>
+						{/* <div > */}
+						<span className={`quote text-${designElementColors.quote}`}>
 							&ldquo;
-						</div>
+						</span>
+						{/* </div> */}
 						<p>
 							I am a client of Rhyan's and have worked closely with Rhyan this
 							past year with the Cash Forecasting Automation project. Rhyan has
@@ -132,7 +135,6 @@ const Styleguide = () => {
 				</blockquote>
 			</section>
 
-			{/* FORM */}
 		</>
 	);
 };

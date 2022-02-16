@@ -9,12 +9,52 @@ const Layout = ({ children }) => {
 
 	const { darkModeClass } = useContext(UIThemeContext)
 
+	// DATA
+	const logoURL = (isDarkModeOn) => {
+		return isDarkModeOn
+			? "/RhyGuy-whitelogo-v2.png"
+			: "/RhyGuy-blacklogo-v2.png";
+	}
+
+	const navItems = [
+		{
+			key: 1,
+			name: "work",
+			url: "#work",
+			locations: ["header"],
+		},
+		{
+			key: 2,
+			name: "reviews",
+			url: "/Reviews",
+			locations: ["header"],
+		},
+		{
+			key: 4,
+			name: "blog",
+			url: "/blog",
+			locations: ["header"],
+		},
+		{
+			key: 5,
+			name: "contact",
+			url: "/#contact",
+			locations: ["header"],
+		},
+		{
+			key: 6,
+			name: "styleguide",
+			url: "/#styleguide",
+			locations: ["header", "footer"],
+		},
+	];
+
 	return (
 		<>
 			{/* must place the dark class in highest most component. Thus extra container */}
 			<div className={`page-container ${darkModeClass}`} >
 				<div className={`page-wrapper`}>
-					<Nav />
+					<Nav logoURL={logoURL} navItems={navItems} />
 					<div className={`container`}>
 						<main >{children}</main>
 					</div>
@@ -24,5 +64,8 @@ const Layout = ({ children }) => {
 		</>
 	);
 };
+
+
+
 
 export default Layout;

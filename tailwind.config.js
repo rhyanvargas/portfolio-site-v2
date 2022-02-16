@@ -4,7 +4,10 @@ const plugin = require("tailwindcss/plugin");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   darkMode: "class",
   theme: {
     colors: {
@@ -15,7 +18,7 @@ module.exports = {
       blue: colors.indigo[300],
       yellow: colors.yellow[300],
       gray: { // usage: theme('colors.gray.light')
-        light: colors.coolGray[50],
+        light: colors.gray[50],
         DEFAULT: "#e8e9f0",
       },
       black: "#111111",
@@ -47,7 +50,7 @@ module.exports = {
         lineHeight: '22px',
       }],
       body: ['18px', '26px'], // body
-      body2: ['20px', '26px'], // body:minwidth:1280px
+      body2: ['20px', '32px'], // body:minwidth:1280px
       body3: ['22px', '34px'], // body:minwidth:1600px
       'md': ['26px', { // h2
         letterSpacing: '0.6px',
@@ -58,23 +61,24 @@ module.exports = {
         lineHeight: '39px',
       }],
       'lg': ['36px', { // h1
-        letterSpacing: '5px',
+        letterSpacing: '-2px',
         lineHeight: '37px',
       }],
       'xl': ['42px', { // h1:minwidth:960px
-        letterSpacing: '5px',
+        letterSpacing: '-2px',
         lineHeight: '53px',
       }],
       '2xl': ['52px', { // h1:minwidth:1600px
-        letterSpacing: '5px',
+        letterSpacing: '-2px',
         lineHeight: '60px',
       }],
     },
-    fontFamily: {
-      heading: ["Heebo", "sans-serif"],
-      // body: ["Roboto", "sans-serif"],
-      body: ["monospace", "sans-serif"],
-    },
+    // fontFamily: {
+    // heading: ["sans-serif"],
+    // heading: ["Heebo", "sans-serif"],
+    // body: ["Roboto", "sans-serif"],
+    // body: ["monospace", "sans-serif"],
+    // },
     fontWeight: {
       // Heebo:wght@600;900&family=Roboto:wght@300;400;500;700&
       boldest: 900,
