@@ -14,7 +14,7 @@ export default function Nav() {
 
 	const listItemStyles = "flex flex-1 justify-center items-center";
 	const listItemBorderStyles =
-		"border-r-2 border-black dark:border-white last:border-none";
+		"border-r border-gray dark:border-white last:border-none";
 	const aStyles = `
 		relative
 		hover:animate-wiggle 
@@ -60,7 +60,7 @@ export default function Nav() {
 	return (
 		<header className="navbar">
 			<nav
-				className="flex flex-1 justify-between border-b-4 border-black dark:border-white"
+				className="flex flex-1 justify-between border-b border-gray dark:border-white"
 				role="navigation"
 			>
 				<div
