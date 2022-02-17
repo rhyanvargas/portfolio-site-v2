@@ -26,25 +26,25 @@ const Layout = ({ children }) => {
 		{
 			key: 2,
 			name: "reviews",
-			url: "/Reviews",
+			url: "/reviews",
 			locations: ["header"],
 		},
 		{
 			key: 4,
 			name: "blog",
-			url: "/blog",
+			url: "#blog",
 			locations: ["header"],
 		},
 		{
 			key: 5,
 			name: "contact",
-			url: "/#contact",
+			url: "#contact",
 			locations: ["header"],
 		},
 		{
 			key: 6,
 			name: "styleguide",
-			url: "/#styleguide",
+			url: "#styleguide",
 			locations: ["header", "footer"],
 		},
 	];
@@ -55,9 +55,9 @@ const Layout = ({ children }) => {
 			<div className={`page-container ${darkModeClass}`} >
 				<div className={`page-wrapper`}>
 					<Nav logoURL={logoURL} navItems={navItems} />
-					<div className={`container`}>
-						<main >{children}</main>
-					</div>
+					<main >
+						{children}
+					</main>
 					<Footer />
 				</div>
 			</div>

@@ -2,7 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
+import { useContext } from 'react'
+import { UIThemeContext } from '../pages/_app'
 
+// DATA / CONSTANTS
 const designElementColors = {
 	quote: "blue",
 	dark: "black",
@@ -23,41 +26,71 @@ const tools = [
 const showTools = (
 	<div className="space-x-2">
 		{tools.map(tool => (
-			<a key={tool.toString()} className="link" href={tool.url}>
+			<a key={`${tool.name.toString()} + ${tool.toString()}`} className="link" href={tool.url}>
 				{tool.name}
 			</a>
 		))}
 	</div>
 )
+
+// RENDER COMPONENT
 const Styleguide = () => {
-	const href = "www.google.com";
+
+	const { darkModeDetails } = useContext(UIThemeContext);
+
+	const pfp = darkModeDetails.isOn
+		? "/rhyguy-profilepic-lookright-circle-darkmode.png"
+		: "/rhyguy-profilepic-lookright-circle.png"
 
 	return (
 		<>
 			<NextSeo title="Style Guide | Rhyan Vargas - Full Stack Web Developer" />
+
 			{/* HERO TEXT */}
-			<section className="container flex flex-wrap sm:flex-no-wrap">
-				<div className="">
+			<section className="
+				hero
+				container
+				flex
+				flex-col
+				items-center
+				tablet:grid
+				tablet:gap-4
+				tablet:grid-cols-2 
+				tablet:grid-rows-1 
+			">
+				{/* Image */}
+				<div className="dark:z-10 flex h-40 pb-5 tablet:pb-0 tablet:h-full justify-center">
+					<div className="w-40 h-full tablet:w-80 relative">
+						<Image
+							className="mix-blend-overlay"
+							alt="Rhyan Vargas Full Stack Web Developer Profile Picture"
+							src={pfp}
+							layout="fill"
+							objectFit="contain"
+							quality={100}
+							sizes="320px"
+							// width={320}
+							// height={320}
+							preload="true"
+						/>
+					</div>
+				</div>
+				{/* Content */}
+				<div className="flex flex-col text-center tablet:text-left tablet:justify-start">
+					{/* <div> */}
 					<span className="label">My name is Rhyan Vargas... </span>
 					<h1>more than a devloper.</h1>
 					<p className="">
-						I care about the user experience of both the end-users and the
-						people managing the product. The tools I use to create amazing
-						products include (but not limitied to): <br /> {showTools}
+						Passionate about creating vision , processes and bringing together team members who are equally excited to bring ideas to life.
+						I use code and tech to build and scale those ideas.
 					</p>
-					<button className="btn-primary mt-10">See my work</button>
-				</div>
-				<div className=" relative w-2/5 flex-shrink-0">
-					<Image
-						className="mix-blend-multiply"
-						alt="Rhyan Vargas Full Stack Web Developer Profile Picture"
-						src="/rhyguy-profilepic-lookright-transparent.png"
-						layout="responsive"
-						quality={100}
-						width={421}
-						height={638}
-						preload="true"
-					/>
+					{/* </div> */}
+					{/* <div> */}
+					{showTools}
+					{/* </div> */}
+					<div className="flex justify-center tablet:justify-start">
+						<button className="btn-primary mt-10">See my work</button>
+					</div>
 				</div>
 			</section>
 
@@ -84,7 +117,7 @@ const Styleguide = () => {
 					<h2 className="">block quote</h2>
 					<div className="relative" aria-hidden="true">
 						{/* <div > */}
-						<span className={`quote text-${designElementColors.quote}`}>
+						<span className={`quote `}>
 							&ldquo;
 						</span>
 						{/* </div> */}
@@ -112,7 +145,7 @@ const Styleguide = () => {
 					<cite className="flex justify-center">
 						<Image
 							className="rounded-full"
-							src="https://media-exp1.licdn.com/dms/image/C5603AQHPgfi62GZuYA/profile-displayphoto-shrink_100_100/0/1517543113026?e=1620259200&v=beta&t=eY6yRGVIey9ASBnp2LO8Vv2YyGRF_Y3ToZS_gHcK1ks"
+							src="https://via.placeholder.com/150"
 							alt="Laura A. Black recommendation for Rhyan Vargas"
 							width="56"
 							height="56"

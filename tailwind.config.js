@@ -15,7 +15,10 @@ module.exports = {
       current: "currentColor",
       green: colors.emerald[300],
       purple: colors.fuchsia[500],
-      blue: colors.indigo[300],
+      blue: { // usage: theme('colors.gray.light')
+        light: colors.indigo[300],
+        DEFAULT: colors.indigo[500],
+      },
       yellow: colors.yellow[300],
       gray: { // usage: theme('colors.gray.light')
         light: colors.gray[50],
@@ -29,15 +32,16 @@ module.exports = {
       padding: '25px'
     },
     screens: {
+      'sm': '640px',// => @media (min-width: 640px) { ... }
       'tablet': '960px',// => @media (min-width: 960px) { ... }
       'laptop': '1280px',// => @media (min-width: 1280px) { ... }
       'desktop': '1600px',// => @media (min-width: 1600px) { ... }
     },
     fontSize: {
-      tiny: ['12px', '16px'], // tiny
+      tiny: ['10px', '16px'], // tiny
       tiny2: ['13px', '17px'], // tiny2:minwidth:1280px
       tiny3: ['15px', '18px'], // tiny3:minwidth:1280px
-      'labelLarge': ['13px', { // labelLarge:minwidth:1280px
+      'labelLarge': ['12px', { // labelLarge:minwidth:1280px
         letterSpacing: '1.2px',
         lineHeight: '17px',
       }],
@@ -49,9 +53,9 @@ module.exports = {
         letterSpacing: '1.4px',
         lineHeight: '22px',
       }],
-      body: ['18px', '26px'], // body
-      body2: ['20px', '32px'], // body:minwidth:1280px
-      body3: ['22px', '34px'], // body:minwidth:1600px
+      body: ['13px', '26px'], // body
+      body2: ['16px', '32px'], // body:minwidth:1280px
+      body3: ['18px', '34px'], // body:minwidth:1600px
       'md': ['26px', { // h2
         letterSpacing: '0.6px',
         lineHeight: '30px',

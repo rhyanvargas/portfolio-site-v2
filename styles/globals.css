@@ -29,9 +29,6 @@
 		-webkit-font-smoothing: auto;
 		font-smoothing: auto;
 	}
-	section.full-width {
-		@apply	pl-0 pr-0;
-	}
 	a {
 		@apply relative
             overflow-hidden
@@ -56,6 +53,7 @@
 	p {
 		@apply font-light
             font-mono
+						text-body
             laptop:text-body2 
             desktop:text-body3;
 	}
@@ -68,12 +66,7 @@
     a {
 		@apply dark:text-white;
 	}
-	section {
-		@apply mt-10 mb-10;
-	}
-	section:first-of-type {
-		@apply mt-0 mb-10;
-	}
+
 
 	button,
 	nav a {
@@ -105,17 +98,38 @@
 @layer components {
 	/* CONTAINERS / WRAPPERS */
 	main {
-    padding: 5rem 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+		@apply 
+			flex
+			flex-1
+			flex-col
+			justify-start
+			items-center
+			tablet:py-20;
   }
+	section {
+		@apply mt-10 mb-10;
+	}
+	section:first-of-type {
+		@apply mt-0 mb-10;
+	}
+	.container {
+		@apply 
+			px-4
+			tablet:px-10
+			laptop:px-20;
+	}
+	.hero {
+		@apply 
+			py-8
+			laptop:py-20;
+	}
 	.page-wrapper {
 		padding-top: var(--nav-height);
 		height:100%;
 		@apply dark:bg-black;
+	}
+	.full-width {
+		@apply	pl-0 pr-0;
 	}
 	/* NAV */
 	header {
@@ -253,8 +267,10 @@
 					 absolute
 					 -top-5
 					 -left-10
-					 z-0
-					 leading-none;
+					 leading-none
+					 mix-blend-soft-light
+					 text-blue-light;
+					 /* dark:text-blue; */
 	}
 	cite {
 		@apply mt-7;

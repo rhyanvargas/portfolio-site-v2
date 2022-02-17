@@ -11,7 +11,7 @@ export default function Home() {
 		<>
 			<NextSeo title="Home | Rhyan Vargas - Full Stack Developer" />
 			{/* <Styleguide/> */}
-			<Reviews />
+			<Styleguide />
 		</>
 	);
 }

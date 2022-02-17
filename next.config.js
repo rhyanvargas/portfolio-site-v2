@@ -1,13 +1,13 @@
 
 const externalImages = [
-    'unsplash.it',
-    'media-exp1.licdn.com'
+  'unsplash.it',
+  'via.placeholder.com'
 ]
 
 
 
 module.exports = {
-    images: {
-      domains: [...externalImages],
-    },
-  }
+  images: {
+    domains: [...externalImages],
+  },
+}

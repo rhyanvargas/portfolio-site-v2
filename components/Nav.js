@@ -11,7 +11,7 @@ export default function Nav({ logoURL, navItems }) {
 
 
 	const logo = () => {
-		console.log(logoURL(darkModeDetails.isOn));
+		return logoURL(darkModeDetails.isOn)
 	}
 
 	const navList = (navItems) => {
@@ -62,7 +62,7 @@ export default function Nav({ logoURL, navItems }) {
 				>
 					<Link href="/">
 						<a className="items-center relative h-full w-28 tablet:w-40 laptop:w-44">
-							<Avatar imgURL='/RhyGuy-blacklogo-v2.png' />
+							<Avatar imgURL={logo()} />
 						</a>
 					</Link>
 				</div>
