@@ -62,7 +62,7 @@ const Styleguide = () => {
 				<div className="dark:z-10 flex h-40 pb-5 tablet:pb-0 tablet:h-full justify-center">
 					<div className="w-40 h-full tablet:w-80 relative">
 						<Image
-							className="mix-blend-overlay"
+							className=""
 							alt="Rhyan Vargas Full Stack Web Developer Profile Picture"
 							src={pfp}
 							layout="fill"

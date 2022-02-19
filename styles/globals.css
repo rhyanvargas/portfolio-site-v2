@@ -268,7 +268,7 @@
 					 -top-5
 					 -left-10
 					 leading-none
-					 mix-blend-soft-light
+					 mix-blend-hard-light
 					 text-blue-light;
 					 /* dark:text-blue; */
 	}

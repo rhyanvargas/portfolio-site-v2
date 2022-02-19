@@ -24,7 +24,8 @@ module.exports = {
         light: colors.gray[50],
         DEFAULT: "#e8e9f0",
       },
-      black: "#111111",
+      black: "#000",
+      // black: "#111111",
       white: "#fff",
     },
     container: {
